@@ -7,6 +7,7 @@ import { CocktailFormComponent } from "./cocktail-container/cocktail-form/cockta
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { FilterPipe } from "../../shared/pipes/filter.pipe";
+import { COCKTAIL_ROUTES } from "./cocktail.routes";
 
 @NgModule({
   declarations: [
@@ -16,6 +17,11 @@ import { FilterPipe } from "../../shared/pipes/filter.pipe";
     CocktailFormComponent,
     FilterPipe
   ],
-  imports: [CommonModule, ReactiveFormsModule, FormsModule, RouterModule]
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
+    RouterModule.forChild(COCKTAIL_ROUTES)
+  ]
 })
 export class CocktailModule {}
